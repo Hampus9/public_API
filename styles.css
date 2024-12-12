@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --background-color: rgba(236, 240, 241, 0.9);
+    --text-color: #333;
+    --button-color: green; /* Changed to green as per previous discussion */
+    --button-hover-color: #27ae60; /* Darker green for hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://cdn.pixabay.com/photo/2015/11/09/21/38/gold-1036021_640.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: overlay;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.137);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    color: var(--primary-color); /* Ensure this is actually applying */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+#verse-btn {
+    background-color: var(--button-color); /* Green color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+#verse-btn:hover {
+    background-color: var(--button-hover-color); /* Darker green on hover */
+    transform: scale(1.05);
+}
+
+.verse-container {
+    background-color: rgba(52, 73, 94, 0.8);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+    /* Enhanced animation properties */
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Improved animation keyframes */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#verse-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    direction: rtl; /* For Arabic text right-to-left alignment */
+}
+
+.translation {
+    font-style: italic;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.verse-info {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #verse-text, .translation {
+        font-size: 1rem;
+    }
+}
