@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #2c3e50;
+    --primary-color: rgb(192, 194, 195);
     --secondary-color: #34495e;
     --background-color: rgba(236, 240, 241, 0.9);
     --text-color: #333;
-    --button-color: green; /* Changed to green as per previous discussion */
-    --button-hover-color: #27ae60; /* Darker green for hover */
+    --button-color: green; 
+    --button-hover-color: #27ae60; 
 }
 
 * {
@@ -41,13 +41,13 @@ body {
 }
 
 h1 {
-    color: var(--primary-color); /* Ensure this is actually applying */
+    color: var(--primary-color); 
     margin-bottom: 1.5rem;
     font-size: 2rem;
 }
 
 #verse-btn {
-    background-color: var(--button-color); /* Green color */
+    background-color: var(--button-color); 
     color: white;
     border: none;
     padding: 12px 24px;
@@ -59,7 +59,7 @@ h1 {
 }
 
 #verse-btn:hover {
-    background-color: var(--button-hover-color); /* Darker green on hover */
+    background-color: var(--button-hover-color); 
     transform: scale(1.05);
 }
 
@@ -74,12 +74,11 @@ h1 {
     justify-content: center;
     text-align: center;
     
-    /* Enhanced animation properties */
     opacity: 0;
     animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Improved animation keyframes */
+
 @keyframes fadeIn {
     from { 
         opacity: 0;
@@ -94,7 +93,7 @@ h1 {
 #verse-text {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    direction: rtl; /* For Arabic text right-to-left alignment */
+    direction: rtl; 
 }
 
 .translation {
@@ -110,7 +109,7 @@ h1 {
     opacity: 0.8;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 600px) {
     .container {
         margin: 1rem;

@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchRandomVerse() {
         try {
-            // First, get a random surah
+            //random surah
             const surahResponse = await fetch('https://api.alquran.cloud/v1/surah');
             const surahData = await surahResponse.json();
             const randomSurah = surahData.data[Math.floor(Math.random() * surahData.data.length)];
 
-            // Then get a random verse from that surah
+            //random verse from that surah
             const verseResponse = await fetch(`https://api.alquran.cloud/v1/surah/${randomSurah.number}/editions/quran-uthmani,en.sahih`);
             const verseData = await verseResponse.json();
             
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const arabicVerse = verseData.data[0].ayahs[randomVerseIndex];
             const translatedVerse = verseData.data[1].ayahs[randomVerseIndex];
 
-            // Update the display
+            
             verseText.textContent = arabicVerse.text;
             verseTranslation.textContent = `Translation: ${translatedVerse.text}`;
             verseInfo.textContent = `Surah: ${randomSurah.name} (${randomSurah.englishName}) - Verse ${arabicVerse.numberInSurah}`;
